@@ -106,6 +106,9 @@ A text file named ```.gitignore``` suppresses accidental versioning of files and
 ```git clone [url]```
 	Downloads a project and its entire version history 
 	
+```git remote add name_of_remote some_user@repository_server.com/some_user/remote_repo_name```
+	addes a remote repository to push and pull against
+	
 ## Make Changes
 ```git status```
 	Lists all new or modified files to be committed
