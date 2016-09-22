@@ -9,9 +9,9 @@ remove leading whitespaces from file:
 
 ```sed 's/^[ \t]*//'```
 
-shorten the first word in a line to 3 letters:
+shorten all the words in a line to 3 letters:
 
-```sed -r 's/([a-z]{3})[a-z]*/\1/'```
+```sed -r 's/([a-z]{3})[a-z]*/\1/g'```
 
 # awk
 
