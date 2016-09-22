@@ -17,4 +17,4 @@ shorten the first word in a line to 3 letters:
 
 print only lines shorter than 80 notes
 
-awk "{if (length(\$0) < 80){print \$0}}"
+```awk "{if (length(\$0) < 80){print \$0}}"```
