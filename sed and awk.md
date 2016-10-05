@@ -38,3 +38,9 @@ sed 's/^#*//'
 ```bash
 awk "{if (length(\$0) < 80){print \$0}}"
 ```
+
+### use awk to match only the command part of history list
+
+```bash
+history | awk 'match($2, /^ssh$/) {print $0}'
+```
