@@ -44,3 +44,9 @@ awk "{if (length(\$0) < 80){print \$0}}"
 ```bash
 history | awk 'match($2, /^ssh$/) {print $0}'
 ```
+
+or
+
+```bash
+history | awk '$2~/^ssh$/ {print $0}'
+```
