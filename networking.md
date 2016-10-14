@@ -2,7 +2,7 @@
 ### Setting up a new NIC:
 
 
-*)	in RH/CentOS:
+* in RH/CentOS:
 
 ```bash
 		cd /etc/sysconfig/network-scripts
@@ -14,7 +14,7 @@
 			NM_CONTROLLED=yes
 			BOOTPROTO=dhcp
 ```
-*)	OR for static IP:
+* OR for static IP:
 	
 ```bash
 		cat > /etc/sysconfig/network
@@ -22,8 +22,10 @@
 			HOSTNAME=server1.cyberciti.biz
 			GATEWAY=192.168.1.254
 ```
-		AND:
-```
+
+AND:
+
+```bash
 		cat > /etc/sysconfig/network-script/ifcfg-eth1
 			DEVICE=eth1
 			HWADDR=08:00:27:72:1D:FC
@@ -34,7 +36,7 @@
 			NM_CONTROLLED=yes
 			BOOTPROTO=static
 ```
-*) in Debain:
+* in Debain:
 
 ```bash
 		cd /etc/network
@@ -42,7 +44,7 @@
 			allow-hotplug eth1
 			iface eth1 inet dhcp
 ```
-*)	OR for static IP:
+* OR for static IP:
 
 ```bash
 		cat >> interfaces:
