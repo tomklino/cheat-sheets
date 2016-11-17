@@ -1,6 +1,6 @@
 # (Chef) knife
 
-A cheat sheet for the chef client knife
+## A cheat sheet for the chef client knife
 
 * search in the data bag 'users' for all users containing a value 'sysadmin' in their 'groups' key
 
