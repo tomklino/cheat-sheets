@@ -33,4 +33,4 @@
 
 * add a recipe to the run list of a node
 
-```knife node run_list add NODE_NAME RUN_LIST_ITEM (options)
+```knife node run_list add NODE_NAME RUN_LIST_ITEM (options)```
