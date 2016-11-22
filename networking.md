@@ -1,5 +1,5 @@
 # networking
-### Setting up a new NIC:
+## Setting up a new NIC:
 
 
 * in RH/CentOS:
@@ -55,7 +55,31 @@ AND:
    			    broadcast 192.168.1.255
   			    gateway 192.168.1.254
 ```
-### flushing dns
+## flushing dns
 ```bash
 service dnsmasq restart
+```
+
+## manipulating routes
+
+### adding route
+```bash
+route add -net 10.10.10.0/24 gw 192.168.0.1
+```
+
+or
+
+```bash
+route add -host 10.10.10.45 gw 192.168.0.1
+```
+
+### deleting route
+```bash
+route del -net 10.10.10.0/24 gw 192.168.0.1
+```
+
+or
+
+```bash
+route del -host 10.10.10.45 gw 192.168.0.1
 ```
