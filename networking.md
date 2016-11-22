@@ -6,7 +6,7 @@
 
 ```bash
 		cd /etc/sysconfig/network-scripts
-		cat > ifcfg-eth1
+		cat >> ifcfg-eth1
 			DEVICE=eth1
 			HWADDR=08:00:27:72:1D:FC
 			TYPE=Ethernet
@@ -17,7 +17,7 @@
 * OR for static IP:
 	
 ```bash
-		cat > /etc/sysconfig/network
+		cat >> /etc/sysconfig/network
 			NETWORKING=yes
 			HOSTNAME=server1.cyberciti.biz
 			GATEWAY=192.168.1.254
