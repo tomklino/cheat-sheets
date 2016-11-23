@@ -83,3 +83,8 @@ or
 ```bash
 route del -host 10.10.10.45 gw 192.168.0.1
 ```
+
+## tracking traffic on a specific interface and port
+```bash
+tcpdump -i eth0 'port 80'
+```
