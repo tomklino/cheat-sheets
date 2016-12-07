@@ -6,6 +6,13 @@
 tar xvf filename.tar.xx
 ```
 
+### or, to a specific destination folder:
+
+```bash
+tar xvf filename.tar.xx -C /some/other/directory
+```
+
+
 ## create a tar archive from folder
 
 ```bash
