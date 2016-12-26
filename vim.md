@@ -6,3 +6,7 @@
 - ```ctrl+w + arrow``` - move cursor to the window in direction of arrow
 - ```ctrl+w ctrl+w``` - cycle through windows
 - ```vsplit``` - vertical split
+
+## useful tricks for writing code
+
+- ```:set autoindent``` - does exactly what it says
