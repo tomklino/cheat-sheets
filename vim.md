@@ -10,3 +10,8 @@
 ## useful tricks for writing code
 
 - ```:set autoindent``` - does exactly what it says
+- ```:set number``` - will show line numbers on the right of all lines
+
+## if ever using vim in Hebrew
+
+- ```:set rightleft``` - right to left
