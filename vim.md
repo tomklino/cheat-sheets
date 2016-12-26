@@ -11,6 +11,12 @@
 
 - ```:set autoindent``` - does exactly what it says
 - ```:set number``` - will show line numbers on the right of all lines
+- use the following steps to tabulate a section
+  1) ```CTRL+V```
+  2) mark required area
+  3) ```SHIFT+I```
+  4) press TAB (or space as needed)
+  5) ```ESC```
 
 ## if ever using vim in Hebrew
 
