@@ -27,3 +27,10 @@ find -mtime +5
 #find and delete files older than 5 days in current directory
 find . -maxdepth 1 -mtime +5 -exec rm {} \;
 ```
+
+* based on the size of the file
+
+```bash
+#find files bigger than 500M
+find -type f -size +500M
+```
