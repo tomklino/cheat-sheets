@@ -8,7 +8,7 @@ if [ "$x" == "string" ]; then
 fi
 ```
 
-* Using while to perform a command on each line of a file
+* Using `while` to perform a command on each line of a file
 
 ```bash
 while read line; do some-command -on $line; done < file-with-lines
