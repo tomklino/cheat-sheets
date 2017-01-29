@@ -32,7 +32,7 @@ for var in $(command-that-outputs-delimeted-list); do command-on $f; done
 
 ```bash
 #start by splitting the file (recommended in its own dir)
-split --line 50 longfile
+split --lines 50 longfile
 #create a thread for each of the resulting files (xaa xab xac...)
 for f in $(ls|grep ^x); do while read line; do command-on $line; done < $f & done
 ```
