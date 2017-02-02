@@ -7,28 +7,34 @@
 
 ## sed tricks
 
-### remove leading whitespaces from file:
+* remove leading whitespaces from file:
 
 ```bash
 sed 's/^[ \t]*//'
 ```
 
-### shorten all the words in a line to 3 letters:
+* shorten all the words in a line to 3 letters:
 
 ```bash
 sed -r 's/([a-z]{3})[a-z]*/\1/g'
 ```
 
-### comment out the entire file (with `#`):
+* comment out the entire file (with `#`):
 
 ```bash
 sed 's/^\(.*\)/#\1/'
 ```
 
-### uncomment all comments from a file:
+* uncomment all comments from a file:
 
 ```bash
 sed 's/^#*//'
+```
+
+* remove blank lines from output
+
+```bash
+sed '/^ *$/d'
 ```
 
 # awk
