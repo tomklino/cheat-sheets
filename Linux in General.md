@@ -13,3 +13,15 @@ dpkg -S /path/to/file
 #or, directly on a command like so
 dpkg -S `which command`
 ```
+
+- List files installed by a specific package
+
+```bash
+dpkg-query -L <package-name>
+```
+
+- List files a .deb file will install
+
+```bash
+dpkg-deb -c <package-name.deb>
+```
