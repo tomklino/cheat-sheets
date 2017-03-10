@@ -2,8 +2,16 @@
 
 * Comparing variable to string
 
-```
+```bash
 if [ "$x" == "string" ]; then
+  echo "match"
+fi
+```
+
+* comparing variable to regex
+
+```bash
+if [[ $y =~ reg(ex|ular\ expressions?) ]]; then
   echo "match"
 fi
 ```
