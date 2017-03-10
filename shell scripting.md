@@ -16,6 +16,8 @@ if [[ $y =~ reg(ex|ular\ expressions?) ]]; then
 fi
 ```
 
+NOTE: No use of double quotes, for spaces use `\ `
+
 * Using `while` to perform a command on each line of a file
 
 ```bash
