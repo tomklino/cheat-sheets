@@ -26,7 +26,7 @@ while read line; do some-command -on $line; done < file-with-lines
 
 NOTE: if any of the commands in the `while` loop is `ssh`, use the `-n` on it to prevent it from forwarding its output to stdin and stop the loop after the first iteration
 
-example:
+Example:
 
 ```bash
 while read line; do echo $line:; ssh -n $line "dpkg -l | grep linux-image; uname -a"; done < ~/source_file
@@ -35,7 +35,7 @@ while read line; do echo $line:; ssh -n $line "dpkg -l | grep linux-image; uname
 * for loops
 
 ```bash
-for var in $(command-that-outputs-delimeted-list); do command-on $f; done
+for var in $(command-that-outputs-space-delimeted-list); do command-on $f; done
 ```
 
 * nice trick that combines for and while loops to multithread on a long file
