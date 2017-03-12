@@ -46,3 +46,17 @@ split --lines 50 longfile
 #create a thread for each of the resulting files (xaa xab xac...)
 for f in $(ls|grep ^x); do while read line; do command-on $line; done < $f & done
 ```
+* declaring a function that uses arguments
+
+```bash
+func() {
+  echo $1 $2
+}
+```
+
+* calling a function and passing a string variable to it
+
+```bash
+var="some string"
+func "$var"
+```
