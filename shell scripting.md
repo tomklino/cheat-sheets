@@ -32,6 +32,8 @@ Example:
 while read line; do echo $line:; ssh -n $line "dpkg -l | grep linux-image; uname -a"; done < ~/source_file
 ```
 
+and it is also worth considering adding `-o StrictHostKeyChecking no` to the ssh command if connecting to many servers for the first time, in order to avoid script waiting for human input on each iteration.
+
 * for loops
 
 ```bash
