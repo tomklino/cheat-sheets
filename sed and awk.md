@@ -39,13 +39,13 @@ sed '/^ *$/d'
 
 # awk
 
-### print only lines shorter than 80 notes
+* print only lines shorter than 80 notes
 
 ```bash
 awk "{if (length(\$0) < 80){print \$0}}"
 ```
 
-### use awk to match only the command part of history list
+* use awk to match only the command part of history list
 
 ```bash
 history | awk 'match($2, /^ssh$/) {print $0}'
@@ -55,4 +55,10 @@ or
 
 ```bash
 history | awk '$2~/^ssh$/ {print $0}'
+```
+
+* use awk with variables from shell
+
+```bash
+awk -v var=$var '$1 == var {print $2}';
 ```
