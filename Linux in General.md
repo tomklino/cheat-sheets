@@ -25,3 +25,9 @@ dpkg-query -L <package-name>
 ```bash
 dpkg-deb -c <package-name.deb>
 ```
+
+- `chmod` numbers representation:
+
+1. `--x` execute
+2. `-w-` write
+4. `r--` read
