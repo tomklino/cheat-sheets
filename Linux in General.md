@@ -35,3 +35,9 @@ dpkg-deb -c <package-name.deb>
 5. `r-x`
 6. `rw-`
 7. `rwx`
+
+- Show all the sudo permissions of a user
+
+```bash
+sudo -l
+```
