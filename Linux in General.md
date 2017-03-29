@@ -28,10 +28,10 @@ dpkg-deb -c <package-name.deb>
 
 - `chmod` numbers representation:
 
-1. `--x` execute
-2. `-w-` write
+1. `--x`
+2. `-w-`
 3. `-wx`
-4. `r--` read
+4. `r--`
 5. `r-x`
 6. `rw-`
 7. `rwx`
