@@ -62,7 +62,7 @@ service dnsmasq restart
 
 ## manipulating routes
 
-### adding route
+* adding route
 ```bash
 route add -net 10.10.10.0/24 gw 192.168.0.1
 ```
@@ -73,7 +73,7 @@ or
 route add -host 10.10.10.45 gw 192.168.0.1
 ```
 
-### deleting route
+* deleting route
 ```bash
 route del -net 10.10.10.0/24 gw 192.168.0.1
 ```
@@ -83,6 +83,12 @@ or
 ```bash
 route del -host 10.10.10.45 gw 192.168.0.1
 ```
+
+## iptables
+
+* add a rule to allow from ip
+
+iptables -A INPUT -s 192.168.1.1 -j ACCEPT
 
 ## tracking traffic on a specific interface and port
 ```bash
