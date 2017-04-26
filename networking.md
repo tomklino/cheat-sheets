@@ -88,7 +88,23 @@ route del -host 10.10.10.45 gw 192.168.0.1
 
 * add a rule to allow from ip
 
+```bash
 iptables -A INPUT -s 192.168.1.1 -j ACCEPT
+```
+
+* delete a rule by its number
+
+first, display the rule numbers as such
+
+```bash
+iptables -nvL --line-numbers
+```
+
+remove the first rule of the INPUT chain
+
+```bash
+iptables -D INPUT 1
+```
 
 ## tracking traffic on a specific interface and port
 ```bash
