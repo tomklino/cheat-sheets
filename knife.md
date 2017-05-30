@@ -6,6 +6,12 @@
 
 ```knife search users "groups:sysadmin"```
 
+* a hack to organise `knife search node` results as `knife node list`
+
+```
+knife search node "environment:production" -a name | grep -Ev "^[\ ]" deployment-base-aus | removeemptylines | cut -d ":" -f1
+```
+
 * run a single time command on all nodes that are part of the staging environment
 
 ```knife ssh "envirnoment:staging" "wall 'hello'"```
