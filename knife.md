@@ -9,7 +9,7 @@
 * a hack to organise `knife search node` results as `knife node list`
 
 ```
-knife search node "environment:production" -a name | grep -Ev "^[\ ]" | removeemptylines | cut -d ":" -f1
+knife search node "environment:production" -a name | grep -Ev "^[\ ]" | sed '/^\s*$/d' | cut -d ":" -f1
 ```
 
 * run a single time command on all nodes that are part of the staging environment
