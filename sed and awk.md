@@ -62,3 +62,10 @@ history | awk '$2~/^ssh$/ {print $0}'
 ```bash
 awk -v var=$var '$1 == var {print $2}';
 ```
+
+* change the default delimeter of awk
+
+```bash
+#read csv files
+awk -F',' '$1 == "something" {print $0}';
+```
