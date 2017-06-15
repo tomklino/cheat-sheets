@@ -69,3 +69,9 @@ awk -v var=$var '$1 == var {print $2}';
 #read csv files
 awk -F',' '$1 == "something" {print $0}';
 ```
+
+* start printing only after a specific regex was found
+
+```bash
+awk 'BEGIN{f=0}; /regex/{f=1} {if(f) print}'
+```
