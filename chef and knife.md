@@ -1,6 +1,6 @@
-# (Chef) knife
+# Chef and knife
 
-## A cheat sheet for the chef client knife
+## knife common
 
 * search in the data bag 'users' for all users containing a value 'sysadmin' in their 'groups' key
 
@@ -44,3 +44,11 @@ knife search node "environment:production" -a name | grep -Ev "^[\ ]" | sed '/^\
 * search nodes running a specific recipe
 
 ```knife search node 'recipes:cookbook\:\:recipe'```
+
+## chef tricks
+
+* quick way to get the actual value of an attribute in chef remotely
+
+```bash
+ssh node.fqdn.com "printf \"node['some']['attribute']\\nexit\\n\" | sudo chef-shell -z 2>/dev/null"
+```
