@@ -68,5 +68,5 @@ knife search node 'recipes:cookbook\:\:recipe'
 * quick way to get the actual value of an attribute in chef remotely
 
 ```bash
-ssh node.fqdn.com "printf \"node['some']['attribute']\\nexit\\n\" | sudo chef-shell -z 2>/dev/null"
+ssh node.fqdn.com "printf \"node['some']['attribute']\\nexit\\n\" | sudo chef-shell -z 2>/dev/null | awk 'BEGIN{f=0}; /^chef/{f=1} {if(f) print}'"
 ```
