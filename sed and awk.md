@@ -37,6 +37,13 @@ sed 's/^#*//'
 sed '/^ *$/d'
 ```
 
+* remove new line (pull next line up) in case line has a specific regex
+(see https://stackoverflow.com/questions/25944087/ for details)
+
+```bash
+sed '/regex/{N;s/\n//;}'
+```
+
 # awk
 
 * print only lines shorter than 80 notes
