@@ -45,6 +45,6 @@ find . -name "file-5" -not -path "./oh/*" -not -path "./no/*"
 
 ```bash
 find ~ -type f -exec md5sum {} \;| grep 1797eaf5aeb776cffbbc93c5376ec7ab
-# it is recomended to limit the file size as checksum is a pretty cpu intensive operations on large files:
+# it is recomended to limit the file size as checksum on large files is cpu intensive
 find ~ -type f -size -10M -exec md5sum {} \;| grep 1797eaf5aeb776cffbbc93c5376ec7ab
 ```
