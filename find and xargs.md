@@ -34,3 +34,9 @@ find . -maxdepth 1 -mtime +5 -exec rm {} \;
 #find files bigger than 500M
 find -type f -size +500M
 ```
+
+* excluding a dir from the search
+
+```bash
+find . -name "file-5" -not -path "./oh/*" -not -path "./no/*"
+```
