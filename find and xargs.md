@@ -40,3 +40,11 @@ find -type f -size +500M
 ```bash
 find . -name "file-5" -not -path "./oh/*" -not -path "./no/*"
 ```
+
+* searching files by their checksum
+
+```bash
+find ~ -type f -exec md5sum {} \;| grep 1797eaf5aeb776cffbbc93c5376ec7ab
+# it is recomended to limit the file size as checksum is a pretty cpu intensive operations on large files:
+find ~ -type f -size -10M -exec md5sum {} \;| grep 1797eaf5aeb776cffbbc93c5376ec7ab
+```
