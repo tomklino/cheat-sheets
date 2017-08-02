@@ -7,6 +7,12 @@
 
 ## sed tricks
 
+* remove the first 3 lines from file:
+
+```bash
+sed '1,3d'
+```
+
 * remove leading whitespaces from file:
 
 ```bash
