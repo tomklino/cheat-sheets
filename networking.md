@@ -110,3 +110,9 @@ iptables -D INPUT 1
 ```bash
 tcpdump -i eth0 'port 80'
 ```
+
+* neat trick to track captured traffic on remote server directly in wireshark
+```bash
+#IMPORTANT: a capture filter is necessary so not to track ssh packets of the connection itself and creating an infinite loop
+ssh full.fqdn.com sudo tcpdump -s0 -n -w - <capture-filter> | wireshark -k -i -
+```
