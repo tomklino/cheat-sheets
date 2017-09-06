@@ -70,3 +70,10 @@ knife search node 'recipes:cookbook\:\:recipe'
 ```bash
 ssh node.fqdn.com "printf \"node['some']['attribute']\\nexit\\n\" | sudo chef-shell -z 2>/dev/null | awk 'BEGIN{f=0}; /^chef/{f=1} {if(f) print}'"
 ```
+
+* a neat way to check a recipe change on a single server without actually updating it
+
+```bash
+echo "$USER: testing recipe";
+lockreason="$(cat /tmp/chef.lock) && rm /tmp/chef.lock && chef-client --skip-cookbook-sync; echo $lockreason > /tmp/chef.lock
+```
