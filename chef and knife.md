@@ -74,7 +74,7 @@ ssh node.fqdn.com "printf \"node['some']['attribute']\\nexit\\n\" | sudo chef-sh
 * a neat way to check a recipe change on a single server without actually updating it
 
 ```bash
-echo "$USER: testing recipe";
+echo "$USER: testing recipe" > /tmp/chef.lock
 #edit your cookbook in /var/chef/cache/cookbooks and then continue to the following line
 lockreason="$(cat /tmp/chef.lock) && rm /tmp/chef.lock && chef-client --skip-cookbook-sync; echo $lockreason > /tmp/chef.lock
 ```
