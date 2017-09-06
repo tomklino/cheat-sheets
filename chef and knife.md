@@ -75,5 +75,6 @@ ssh node.fqdn.com "printf \"node['some']['attribute']\\nexit\\n\" | sudo chef-sh
 
 ```bash
 echo "$USER: testing recipe";
+#edit your cookbook in /var/chef/cache/cookbooks and then continue to the following line
 lockreason="$(cat /tmp/chef.lock) && rm /tmp/chef.lock && chef-client --skip-cookbook-sync; echo $lockreason > /tmp/chef.lock
 ```
