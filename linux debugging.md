@@ -9,5 +9,5 @@ sudo strace -f ohai 2>&1 >/dev/null | grep ^open\( | grep -v ENOENT | sed 's/^.*
 ### another way to track all files opened by a process
 
 ```shell
-sudo strace -p 1234 -f -s999 -e trace=open,openat
+sudo strace -p 1234 -f -s999 -e open,openat
 ```
