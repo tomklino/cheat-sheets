@@ -88,3 +88,9 @@ awk -F',' '$1 == "something" {print $0}';
 ```bash
 awk 'BEGIN{f=0}; /regex/{f=1} {if(f) print}'
 ```
+
+* print from line x to line y:
+
+```bash
+awk 'BEGIN{f=0}; NR == 118 {f=1} {if(f) print} NR == 128 {f=0}' < /path/to/file
+```
