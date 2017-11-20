@@ -56,7 +56,7 @@ sed '/regex/{N;s/\n//;}'
 #add hello to the end of all lines in a file
 sed 's/$/hello/'
 #add hi to the end of each line matching a regex
-sed '/h+[123]/$/hi/'
+sed '/h+[123]/s/$/hi/'
 ```
 
 # awk
