@@ -50,6 +50,15 @@ sed '/^ *$/d'
 sed '/regex/{N;s/\n//;}'
 ```
 
+* adding text to the end of a line
+
+```bash
+#add hello to the end of all lines in a file
+sed 's/$/hello/'
+#add hi to the end of each line matching a regex
+sed '/h+[123]/$/hi/'
+```
+
 # awk
 
 * print only lines shorter than 80 notes
