@@ -103,3 +103,9 @@ awk 'BEGIN{f=0}; /regex/{f=1} {if(f) print}'
 ```bash
 awk 'BEGIN{f=0}; NR == 118 {f=1} {if(f) print} NR == 128 {f=0}' < /path/to/file
 ```
+
+* print column x of line y:
+
+```bash
+awk 'FNR==4 {print $1}'
+```
