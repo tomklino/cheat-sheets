@@ -1,13 +1,19 @@
 # Linux debugging commands
 
-### use strace to follow all files opened by a process
+* use strace to follow all files opened by a process
 
 ```shell
-sudo strace -f ohai 2>&1 >/dev/null | grep ^open\( | grep -v ENOENT | sed 's/^.*\"\(.*\)".*$/\1/' | sort | uniq | tee ~/opened_by_ohai
+sudo strace -p 1234 -f -s999 -e file
 ```
 
-### another way to track all files opened by a process
+* using strace to get a good grasp of what an executable is doing
 
 ```shell
-sudo strace -p 1234 -f -s999 -e open,openat
+strace -f -e file,execve -s9999 <command>
+```
+
+* or, to keep the strace output from getting in the way of the program output, use `-o /tmp/filename.strace` to write `strace`'s output to a file
+
+```
+strace -f -e file,execve -s9999 -o /tmp/filename.strace <command>
 ```
