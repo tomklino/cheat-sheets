@@ -2,6 +2,12 @@
 
 Git help
 
+* show diff since last commit:
+
+```bash
+git diff @~..@
+```
+
 ## The Three States
 
 ```Git Directory```
