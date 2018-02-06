@@ -6,6 +6,8 @@ Git help
 
 ```bash
 git diff @~..@
+# or, since n commits ago:
+git diff @~n..@
 ```
 
 ## The Three States
