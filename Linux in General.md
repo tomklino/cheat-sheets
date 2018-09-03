@@ -5,6 +5,11 @@
 ```bash
 which command
 ```
+- Determine what the command is
+
+```bash
+type command
+```
 
 - Determining the package that installed a specific file
 
