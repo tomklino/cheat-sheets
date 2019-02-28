@@ -13,7 +13,7 @@ kubectl exec -it pod-name -- /bin/bash
 * Search a resource that matches label.a AND label.b
 
 ```bash
-kubectl get pod -l label.a=value1 label.b=value2
+kubectl get pod -l label.a=value1,label.b=value2
 ```
 
 * Search a resource that matches label.a OR label.b
