@@ -1,5 +1,13 @@
 # Kubernetes
 
+## Common
+
+* Executing a shell in a pod:
+
+```bash
+kubectl exec -it pod-name -- /bin/bash
+```
+
 ## Advanced label search
 
 * Search a resource that matches label.a AND label.b
@@ -14,16 +22,15 @@ kubectl get pod -l label.a=value1 label.b=value2
 kubectl get pod -l label.a=value1 -l label.b=value2
 ```
 
+## Secrets
+
 * Creating a secret
 
 ```bash
 kubectl create secret generic name-of-secret --from-file=/path/to/file
 ```
-* Executing a shell in a pod:
 
-```bash
-kubectl exec -it pod-name -- /bin/bash
-```
+## Parsing tricks
 
 * Getting the selectors for a service:
 
