@@ -46,3 +46,9 @@ dpkg-deb -c <package-name.deb>
 ```bash
 sudo -l
 ```
+
+- Using less with color:
+
+```bash
+jq -C . data.json | less -R
+```
