@@ -1,5 +1,13 @@
 # Git
 
+* To store credentials when using https
+
+```bash
+git config credential.helper store
+
+# the next git push or git pull will ask for a password if one does not exist and store it
+```
+
 Git help
 
 * show diff since last commit:
