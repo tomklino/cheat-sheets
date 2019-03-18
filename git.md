@@ -1,5 +1,11 @@
 # Git
 
+* To amend the last commit message (providing it has not yet been pushed)
+
+```bash
+git commit --amend -m "new commit message"
+```
+
 * To store credentials when using https
 
 ```bash
