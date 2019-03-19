@@ -5,7 +5,7 @@
 * Executing a pod as an interactive shell
 
 ```bash
-kubectl run --rm -i --tty busybox --image=busybox -- sh
+kubectl run --generator=run-pod/v1 --rm -i --tty busybox --image=busybox -- sh
 ```
 
 * Executing a shell in a pod:
