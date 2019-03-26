@@ -14,6 +14,12 @@ kubectl run --generator=run-pod/v1 --rm -i --tty busybox --image=busybox -- sh
 kubectl exec -it pod-name -- /bin/bash
 ```
 
+* Getting the worker node running a specific pod
+
+```bash
+kubectl get pod test-sonar-sonarqube-7cc856c7c9-zrfhv -o custom-columns=Name:{.metadata.name},Node:{.spec.nodeName}
+```
+
 ## Advanced label search
 
 * Search a resource that matches label.a AND label.b
