@@ -17,7 +17,7 @@ kubectl exec -it pod-name -- /bin/bash
 * Getting the worker node running a specific pod
 
 ```bash
-kubectl get pod test-sonar-sonarqube-7cc856c7c9-zrfhv -o custom-columns=Name:{.metadata.name},Node:{.spec.nodeName}
+kubectl get pod <pod-name> -o custom-columns=Name:{.metadata.name},Node:{.spec.nodeName}
 ```
 
 ## Advanced label search
