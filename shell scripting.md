@@ -34,6 +34,21 @@ while read line; do echo $line:; ssh -n $line "dpkg -l | grep linux-image; uname
 
 and it is also worth considering adding `-o StrictHostKeyChecking no` to the ssh command if connecting to many servers for the first time, in order to avoid script waiting for human input on each iteration.
 
+## BASH Variable substitution
+
+* default value:
+
+```bash
+var=${parameter:-defaultValue}
+```
+
+* sed-like substitution:
+
+```bash
+out="${x/unix/linux}" # replace the first instace of unix with linux in x
+out="${x//unix/linux}" # replace every instace of unix with linux in x
+```
+
 ## for loops
 
 * basic for loop
