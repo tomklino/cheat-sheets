@@ -20,6 +20,20 @@ kubectl exec -it pod-name -- /bin/bash
 kubectl get pod <pod-name> -o custom-columns=Name:{.metadata.name},Node:{.spec.nodeName}
 ```
 
+## Useful custom-colomns:
+
+* get node name for pod:
+
+```
+custom-columns=Name:{.metadata.name},Node:{.spec.nodeName}
+```
+
+* get requests memory for each container in pod
+
+```
+custom-columns=Name:{.metadata.name},Requests:{.spec.containers[*].resources.requests.memory}
+```
+
 ## Advanced label search
 
 * Search a resource that matches label.a AND label.b
