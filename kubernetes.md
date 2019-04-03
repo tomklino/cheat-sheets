@@ -28,11 +28,10 @@ kubectl get pod <pod-name> -o custom-columns=Name:{.metadata.name},Node:{.spec.n
 custom-columns=Name:{.metadata.name},Node:{.spec.nodeName}
 ```
 
-* get requests memory for each container in pod
+* get memory requests and limits for each container in pod
 
 ```
-custom-columns=Name:{.metadata.name},Requests:{.spec.containers[*].resources.requests.memory}
-```
+custom-columns=Name:{.metadata.name},Requests:{.spec.containers[*].resources.requests.memory},Limits:{.spec.containers[*].resources.limits.memory}```
 
 ## Advanced label search
 
