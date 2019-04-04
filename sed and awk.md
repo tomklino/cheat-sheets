@@ -68,7 +68,8 @@ sed -nE '1h;1!H;$g;$s|(.*)(^regex$)|\1new line before the last occurrence of reg
 #                  ^^ $s at the last line (meaning, after all lines were copied to pattern space), perform substition
 #                     ^^^ (.*) first capture group, greedy capture of all characters, until what comes at the second capture group
 #                         ^^^^^^^ (^regex$) second capture group, in this case a line containing only the word regex
-# then, at the end, \1something\n\2 prints the replaces the part that was captured, with the first capture group, then the "something", a new line character, and the second capture group
+# then, at the end, \1something\n\2 replaces the part that was captured, with the first capture group, then the "something", a new line character, and the second capture group
+# finally, $p, prints the pattern space, since -n suppressed printing lines
 ```
 
 # awk
