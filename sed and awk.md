@@ -59,6 +59,18 @@ sed 's/$/hello/'
 sed '/h+[123]/s/$/hi/'
 ```
 
+* add line before the last occurrence of an expression in a file
+
+```bash
+sed -nE '1h;1!H;$g;$s|(.*)(^regex$)|\1new line before the last occurrence of regex\n\2|;$p'
+#    ^ #-n suppresses automatic printing of line, so only prints on p command at the end ^
+#        ^^^^^^^^^ 1h;1!H;$g copy all lines to hold space, and then at the last line, copy them back to pattern space
+#                  ^^ $s at the last line (meaning, after all lines were copied to pattern space), perform substition
+#                     ^^^ (.*) first capture group, greedy capture of all characters, until what comes at the second capture group
+#                         ^^^^^^^ (^regex$) second capture group, in this case a line containing only the word regex
+# then, at the end, \1something\n\2 prints the replaces the part that was captured, with the first capture group, then the "something", a new line character, and the second capture group
+```
+
 # awk
 
 * print only lines shorter than 80 notes
