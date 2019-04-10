@@ -1,4 +1,4 @@
-#tar and gzip
+# tar and gzip
 
 ## untar ```.tar.xx``` files (where ```xx``` is any extention)
 
