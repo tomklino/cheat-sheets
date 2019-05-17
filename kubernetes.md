@@ -34,6 +34,14 @@ custom-columns=Name:{.metadata.name},Node:{.spec.nodeName}
 custom-columns=Name:{.metadata.name},Requests:{.spec.containers[*].resources.requests.memory},Limits:{.spec.containers[*].resources.limits.memory}
 ```
 
+## Resizing Stateful Sets with no down-time (works for increasing only)
+
+ - (if part of a helm chart) edit the sts template accordingly
+ - delete the sts with an arg --cascade=false
+ - apply the chart or the new sts
+ - manually edit the existing pvcs to the new size
+ - after about 30 seconds, restart the sts pods one by one
+
 ## Advanced label search
 
 * Search a resource that matches label.a AND label.b
