@@ -21,6 +21,7 @@ aws route53 list-hosted-zones | \
   while read zone; do \
     aws route53 list-resource-record-sets --hosted-zone-id $zone | \
     jq '.ResourceRecordSets[] | select(.Type == "A" or .Type == "CNAME") | .Name' | \
-    tr -d '"'; \
+    tr -d '"' | \
+    sed 's|\\\\052|*|g'; # replacing asterisk escape code with asterisk \
   done
 ```
