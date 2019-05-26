@@ -3,10 +3,11 @@
 ## spliting and controlling splitted windows
 
 - ```:split filename``` - split window and load another file
-- ```ctrl+w + arrow``` - move cursor to the window in direction of arrow
-- ```ctrl+w ctrl+w``` - cycle through windows
-- ```vsplit``` - vertical split
-- <kbd>CTRL</kbd>+<kbd>W</kbd> then _ - maximaze current split window
+- <kbd>CTRL</kbd>+<kbd>W</kbd> + arrow - move to the window in direction of arrow
+- <kbd>CTRL</kbd>+<kbd>W</kbd><kbd>CTRL</kbd>+<kbd>W</kbd> - cycle through windows
+- ```:vsplit``` - vertical split
+- <kbd>CTRL</kbd>+<kbd>W</kbd> then <kbd>_</kbd> - maximaze current split window
+- <kbd>CTRL</kbd>+<kbd>W</kbd> then <kbd>=</kbd> - equal size for all split windows
 
 ## useful tricks for writing code
 
