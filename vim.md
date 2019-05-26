@@ -6,6 +6,7 @@
 - ```ctrl+w + arrow``` - move cursor to the window in direction of arrow
 - ```ctrl+w ctrl+w``` - cycle through windows
 - ```vsplit``` - vertical split
+- <kbd>CTRL</kbd>+<kbd>W</kbd> then _ - maximaze current split window
 
 ## useful tricks for writing code
 
