@@ -77,3 +77,33 @@ kubectl get svc name-of-service -o json | jq '.spec.selector'
 ```bash
 kubectl get pod -l label=something -o json | jq -C '.items[] | { name: .metadata.name, owner: { kind: .metadata.ownerReferences[].kind, name: .metadata.ownerReferences[].name } } '
 ```
+
+## Minikube
+
+* Attaching a directory from the workstation directly to a pod
+
+1. mount the dir into minikube with minikube mount (e.g. `minikube mount $(pwd):/go-dev`)
+2. create a pod that utilizes a volume as a hostpath to the destination mounted in step 1:
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: go-dev
+spec:
+  containers:
+  - name: go-dev
+    image: 'golang:1.12-stretch'
+    stdin: true
+    tty: true
+    args: [ "bash" ]
+    workingDir: '/app'
+    volumeMounts:
+      - mountPath: '/app'
+        name: "host-mount"
+  volumes:
+    - name: "host-mount"
+      hostPath:
+        path: "/go-dev"
+```
+3. execute or attach into the pod `kubectl exec -it go-dev -- bash`
