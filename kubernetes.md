@@ -34,7 +34,7 @@ custom-columns=Name:{.metadata.name},Node:{.spec.nodeName}
 custom-columns=Name:{.metadata.name},Requests:{.spec.containers[*].resources.requests.memory},Limits:{.spec.containers[*].resources.limits.memory}
 ```
 
-## Resizing Stateful Sets with no down-time (works for increasing only)
+## Resizing Stateful Sets PVC with no down-time (works for increasing only)
 
  1. Edit the helm values.yaml or the sts template accordingly
  2. Delete the sts with an arg --cascade=false
