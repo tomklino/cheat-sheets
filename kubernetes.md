@@ -28,6 +28,11 @@ kubectl get pod <pod-name> -o custom-columns=Name:{.metadata.name},Node:{.spec.n
 custom-columns=Name:{.metadata.name},Node:{.spec.nodeName}
 ```
 
+* get ip for each pod:
+```
+custom-columns=Name:{.metadata.name},IP:{.status.podIP}
+```
+
 * get memory requests and limits for each container in pod
 
 ```
