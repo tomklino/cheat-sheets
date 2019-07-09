@@ -20,6 +20,12 @@ kubectl exec -it pod-name -- /bin/bash
 kubectl get pod <pod-name> -o custom-columns=Name:{.metadata.name},Node:{.spec.nodeName}
 ```
 
+* Get all pending pods
+
+```bash
+kubectl get pods --field-selector=status.phase=Pending
+```
+
 ## Useful custom-colomns:
 
 * get node name for pod:
