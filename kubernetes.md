@@ -34,6 +34,11 @@ kubectl get pods --field-selector=status.phase=Pending
 custom-columns=Name:{.metadata.name},Node:{.spec.nodeName}
 ```
 
+* get owner of each pod:
+```
+custom-columns=Name:{.metadata.name},Owner:{.metadata.ownerReferences[].name}
+```
+
 * get ip for each pod:
 ```
 custom-columns=Name:{.metadata.name},IP:{.status.podIP}
