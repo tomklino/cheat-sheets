@@ -20,6 +20,11 @@ useradd --create-home tomk
 # paste them in seperate lines in .ssh/authorized_keys (under user home dir)
 ```
 
+- Add an existing user to an existing group
+```
+usermod -a -G group_name user_name
+```
+
 - Determining the package that installed a specific file (Debian)
 
 ```bash
