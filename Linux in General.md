@@ -11,7 +11,13 @@ which command
 type command
 ```
 
-- Determining the package that installed a specific file
+- Create a user
+
+```
+useradd --create-home tomk
+```
+
+- Determining the package that installed a specific file (Debian)
 
 ```bash
 dpkg -S /path/to/file
@@ -19,13 +25,13 @@ dpkg -S /path/to/file
 dpkg -S `which command`
 ```
 
-- List files installed by a specific package
+- List files installed by a specific package (Debian)
 
 ```bash
 dpkg-query -L <package-name>
 ```
 
-- List files a .deb file will install
+- List files a .deb file will install (Debian)
 
 ```bash
 dpkg-deb -c <package-name.deb>
