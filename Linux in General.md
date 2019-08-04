@@ -15,6 +15,10 @@ type command
 
 ```
 useradd --create-home tomk
+
+# if there are any ssh keys to attach to the user
+# paste them in seperate lines in .ssh/authorized_keys (under user home dir)
+
 ```
 
 - Determining the package that installed a specific file (Debian)
