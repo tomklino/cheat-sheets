@@ -44,6 +44,11 @@ custom-columns=Name:{.metadata.name},Owner:{.metadata.ownerReferences[].name}
 custom-columns=Name:{.metadata.name},IP:{.status.podIP}
 ```
 
+* get images of containers for each pod:
+```
+custom-columns=Name:{.metadata.name},Image:{.spec.containers[].image}
+```
+
 * get memory requests and limits for each container in pod
 
 ```
