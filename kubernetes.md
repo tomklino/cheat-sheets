@@ -26,6 +26,12 @@ kubectl get pod <pod-name> -o custom-columns=Name:{.metadata.name},Node:{.spec.n
 kubectl get pods --field-selector=status.phase=Pending
 ```
 
+* Get all pods scheduled to a specific node:
+
+```bash
+kubectl get pods --all-namespaces --field-selector spec.nodeName=worker1
+```
+
 ## Useful custom-colomns:
 
 * get node name for pod:
