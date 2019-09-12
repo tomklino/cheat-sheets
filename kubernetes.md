@@ -1,5 +1,13 @@
 # Kubernetes
 
+## Emergencies
+
+* Rollback helm to previos successful release
+
+```bash
+helm rollback <release-name> 0
+```
+
 ## Common
 
 * Executing a pod as an interactive shell
