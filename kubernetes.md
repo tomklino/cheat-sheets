@@ -32,6 +32,12 @@ kubectl get pods --field-selector=status.phase=Pending
 kubectl get pods --all-namespaces --field-selector spec.nodeName=worker1
 ```
 
+* Get events for a specific pod
+
+```bash
+kubectl get events --field-selector=involvedObject.name=<pod-name>
+```
+
 ## Useful custom-colomns:
 
 * get node name for pod:
