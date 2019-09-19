@@ -84,6 +84,14 @@ or
 route del -host 10.10.10.45 gw 192.168.0.1
 ```
 
+* Turning ip forwarding on or off
+
+```bash
+sysctl -w net.ipv4.ip_forward=0 # off
+sysctl -w net.ipv4.ip_forward=1 # on
+sysctl net.ipv4.ip_forward # check value with no change
+```
+
 ## iptables
 
 * add a rule to allow from ip
