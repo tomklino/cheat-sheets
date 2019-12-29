@@ -75,13 +75,13 @@ custom-columns=Name:{.metadata.name},Image:{.spec.containers[].image}
 custom-columns=Name:{.metadata.name},Requests:{.spec.containers[*].resources.requests.memory},Limits:{.spec.containers[*].resources.limits.memory}
 ```
 
-## Resizing Stateful Sets PVC with no down-time (works for increasing only)
+## Increase Stateful Sets PVCs with zero down-time
 
  1. Edit the helm values.yaml or the sts template accordingly
  2. Delete the sts with an arg --cascade=false
- 3. Apply the chart or the new sts
- 4. Manually edit the existing pvcs to the new size
- 5. After about 30 seconds, restart the sts pods one by one
+ 3. Manually edit the existing pvcs to the new size
+ 4. Apply the chart or the new sts
+ 5. After about 30 seconds, if not already performed by step 4, restart the sts pods one by one
 
 ## Advanced label search
 
