@@ -75,6 +75,12 @@ custom-columns=Name:{.metadata.name},Image:{.spec.containers[].image}
 custom-columns=Name:{.metadata.name},Requests:{.spec.containers[*].resources.requests.memory},Limits:{.spec.containers[*].resources.limits.memory}
 ```
 
+* get an easy to read view of simple ingresses (those that only have one host and one path)
+
+```
+custom-columns=Name:{.metadata.name},Host:{.spec.rules[0].host},Path:{.spec.rules[0].http.paths[0].path}
+```
+
 ## Increase Stateful Sets PVCs with zero down-time
 
  1. Edit the helm values.yaml or the sts template accordingly
