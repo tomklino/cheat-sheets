@@ -25,3 +25,11 @@ aws route53 list-hosted-zones | \
     sed 's|\\\\052|*|g'; # replacing asterisk escape code with asterisk \
   done
 ```
+
+## S3
+
+* Make an item in s3 available for public read:
+
+```bash
+aws s3api put-object-acl --bucket name-of-my-bucket --key item-in-the-bucket.html --acl public-read
+```
