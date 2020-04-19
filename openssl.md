@@ -7,7 +7,7 @@ openssl x509 -in something.com.cert.pem -text
 
 * Create public private pair
 ```bash
-openssl genrsa -out key.pem 2048
+openssl genrsa -out private-key.pem 2048
 openssl rsa -in key.pem -outform PEM -pubout -out public.pem
 ```
 
@@ -24,4 +24,14 @@ openssl enc -aes-256-cbc -salt -in file_to_encrypt.txt -out ecrypted_file.enc -k
 * Encrypt using public key
 ```bash
 openssl rsautl -encrypt -inkey aharon.pub.pem -pubin -in key.bin -out key.bin.aharon.enc
+```
+
+* Decrypt using private key
+```bash
+openssl rsautl -decrypt -inkey priate-key.pem -in filekey_encrypted.key -out filekey.key
+```
+
+* Decrypt using symetric key
+```bash
+openssl enc -d -aes-256-cbc -in kubeconfig_encrypted  -out kubeconfig -kfile ./symetric-key.bin
 ```
