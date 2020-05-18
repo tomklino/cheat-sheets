@@ -16,7 +16,7 @@ scp -P<ssh port> <file on local machine> <username>@<server_ip>:/path/to/destina
 
 ```
 Host mymachine
-  HostName 18.232.105.73
+  HostName 10.0.0.1
   ForwardAgent yes
   IdentityFile ~/.ssh/id_rsa
   User root
