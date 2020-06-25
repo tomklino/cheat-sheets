@@ -68,3 +68,13 @@ az webapp list -otable
 # NOTE the '-o tsv' is important if you want to place the output into a variable, without it the output will come out with quotes
 az webapp show --name toklinov-webapp --resource-group toklinov-rg --query identity.principalId -o tsv
 ```
+
+* Set configurations for webapp
+
+```
+# set a connection string based on a secret in keyvault (see the keyvault section for how to set the variable in the example)
+
+az webapp config connection-string set \
+  -g resource-group-name -n webapp-name \
+  -t Custom --settings "StorageAccount=@Microsoft.KeyVault(SecretUri=${storageAccountSecretUri})"
+```
