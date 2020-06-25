@@ -46,6 +46,15 @@ az keyvault set-policy --name toklino-contoso-keyvault --object-id 8abcd500-523c
 az webapp show --name toklinov-webapp --resource-group toklinov-rg --query identity.principalId -o tsv
 ```
 
+* Get the URI of a secret (to be used in configuration of services that need to consume the secret)
+
+```
+az keyvault secret show --vault-name keyvault-name --name StorageAccount --query "id"
+
+# Or, directly into a variable (note the -otsv at the end):
+storageAccountSecretUri=$(az keyvault secret show --vault-name keyvault-name --name StorageAccount --query "id" -otsv)
+```
+
 ## Webapps (app service)
 
 ```
