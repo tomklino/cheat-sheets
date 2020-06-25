@@ -64,6 +64,12 @@ storageAccountSecretUri=$(az keyvault secret show --vault-name keyvault-name --n
 az webapp list -otable
 ```
 
+* Get the URL of a webapp
+
+```
+az webapp show -g resource-group-name -n webapp-name --query "defaultHostName" -otsv
+```
+
 * Get unique object id of webapp for use with keyvault permissions
 
 ```
