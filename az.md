@@ -5,7 +5,13 @@
 * Get all names and prefixes of subnets for a vnet
 
 ```
-az network vnet show -g "resource-group" -n "vnet" --query 'subnets[].{Name: name, Prefix: addressPrefix}' --output table
+az network vnet show -g "resource-group" -n "vnet" --query 'subnets[].{Name: name, Prefix: addressPrefix}' -otable
+```
+
+* List secrets along with their URL
+
+```
+az keyvault secret list --vault-name "keyvault-name" --query "[].{Name: name, url: id}" -otable
 ```
 
 ## Keyvault
