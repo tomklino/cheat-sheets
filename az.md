@@ -57,8 +57,10 @@ storageAccountSecretUri=$(az keyvault secret show --vault-name keyvault-name --n
 
 ## Webapps (app service)
 
-```
+
 * List webapps
+
+```
 az webapp list -otable
 ```
 
