@@ -30,3 +30,9 @@ Max retries exceeded attempting to connect to vault. The vault may not exist or 
 ```
 az keyvault secret set --vault-name "keyvault-name" --name "Anannas" --value "Pineapple"
 ```
+
+* Show access policies for keyvault
+
+```
+az keyvault show --name "keyvault-name" --query "properties.accessPolicies"
+```
