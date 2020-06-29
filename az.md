@@ -44,6 +44,14 @@ az vm image list --publisher canonical --all -otable
 az vm show -d -g resource-group -n hostname1 --query "publicIps" -otsv
 ```
 
+## Network
+
+* List public IPs
+
+```
+az network public-ip list -otable
+```
+
 ## Keyvault
 
 * List secrets in a keyvault
