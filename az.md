@@ -14,6 +14,30 @@ az network vnet show -g "resource-group" -n "vnet" --query 'subnets[].{Name: nam
 az keyvault secret list --vault-name "keyvault-name" --query "[].{Name: name, url: id}" -otable
 ```
 
+## VMs
+
+* Create a vm:
+
+```
+az vm create -g resource-group --name hostname1 \
+  --size Standard_B1ls --vnet-name vnet-of-choice --ssh-key-values ~/.ssh/id_rsa.pub \
+  --image Canonical:UbuntuServer:18.04-LTS:18.04.202006101
+```
+
+* To get a list of possible sizes to use:
+
+```
+# replace westeurope with the location of your choice
+az vm list-sizes -l westeurope -otable
+```
+
+* To get a list of images:
+
+```
+# Common publishers are: OpenLogic, CoreOS, Debian, SUSE, RedHat, SUSE, Canonical
+az vm image list --publisher canonical --all -otable
+```
+
 ## Keyvault
 
 * List secrets in a keyvault
