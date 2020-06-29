@@ -38,6 +38,12 @@ az vm list-sizes -l westeurope -otable
 az vm image list --publisher canonical --all -otable
 ```
 
+* Get the public IP of a VM by name
+
+```
+az vm show -d -g resource-group -n hostname1 --query "publicIps" -otsv
+```
+
 ## Keyvault
 
 * List secrets in a keyvault
