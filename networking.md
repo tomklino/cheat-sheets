@@ -100,6 +100,13 @@ sysctl net.ipv4.ip_forward # check value with no change
 iptables -A INPUT -s 192.168.1.1 -j ACCEPT
 ```
 
+* add a rule to allow a specific port
+
+```bash
+iptables -A INPUT -p tcp --dport 22 -j ACCEPT            # from anywhere on the internet
+iptables -A INPUT -p tcp -s 8.8.8.8 --dport 22 -j ACCEPT # only from a specific source IP
+```
+
 * delete a rule by its number
 
 first, display the rule numbers as such
