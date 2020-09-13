@@ -24,3 +24,9 @@ tar cvzf filename.tar.gz dirname/
 ```bash
 tar --exclude='dir/.git' --exclude='dir/node_modules' -cvzf filename.tar.gz dir/
 ```
+
+## create a tar and pipe it to stdout instead of a file
+
+```bash
+tar -cf - something | base64
+```
