@@ -1,5 +1,25 @@
 # Azure CLI tool
 
+## General Pupose
+
+* Show active account and subscription
+
+```
+az account show -otable
+```
+
+* List registered accounts and subscriptions
+
+```
+az account list -otable
+```
+
+* Switch subscription
+
+```
+az account set --subscription "My Demos"
+```
+
 ## Useful --query snippets
 
 * Get all names and prefixes of subnets for a vnet
