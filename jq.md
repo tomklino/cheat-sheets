@@ -17,3 +17,8 @@ cat something.json | jq '.[] | select(.name=="Tom")'
 ```bash
 cat something.json | jq '.[] | select(.city|test("[Rr]amat")'
 ```
+
+* Use variables from bash within jq
+```bash
+cat something.json | jq --arg name "$name" '.[] | select(.name==$name)'
+```
