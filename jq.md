@@ -15,7 +15,7 @@ cat something.json | jq '.[] | select(.name=="Tom")'
 * Filter array based on an argument matching a regex
 
 ```bash
-cat something.json | jq '.[] | select(.city|test("[Rr]amat")'
+cat something.json | jq '.[] | select(.city|test("[Rr]amat"))'
 ```
 
 * Use variables from bash within jq
