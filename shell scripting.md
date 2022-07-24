@@ -24,6 +24,12 @@ NOTE: No use of double quotes, for spaces use `\ `
 while read line; do some-command -on $line; done < file-with-lines
 ```
 
+* Using `while` when the input consists of space delimeted values
+
+```bash
+while read -r var1 var2; do some-command $var1 $var2; done < file-with-lines
+```
+
 NOTE: if any of the commands in the `while` loop is `ssh`, use the `-n` on it to prevent it from forwarding its output to stdin and stop the loop after the first iteration
 
 Example:
