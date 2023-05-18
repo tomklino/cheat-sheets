@@ -18,6 +18,12 @@ cat something.json | jq '.[] | select(.name=="Tom")'
 cat something.json | jq '.[] | select(.city|test("[Rr]amat"))'
 ```
 
+* Select an object in which a subarry contains a value
+
+```bash
+cat something.json | jq 'select(.members[] | contains("username"))'
+```
+
 * Use variables from bash within jq
 ```bash
 cat something.json | jq --arg name "$name" '.[] | select(.name==$name)'
