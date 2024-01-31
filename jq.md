@@ -25,6 +25,13 @@ cat something.json | jq 'select(.members[] | contains("username"))'
 ```
 
 * Use variables from bash within jq
+
 ```bash
 cat something.json | jq --arg name "$name" '.[] | select(.name==$name)'
 ```
+
+* Create a table view from a json input
+
+```bash
+jq -r '[["Modified", "ID", "Name"], (.[]|[(.updateTs|tonumber|./1000|strftime("%Y-%m-%dT%H:%M:%SZ")), .id, (.name|@json)])]|.[]|@tsv' | column -t -s $'\t'\n}
+``` 
