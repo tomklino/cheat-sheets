@@ -50,7 +50,7 @@ jq '.timestamp | tonumber | ./1000 | strftime("%Y-%m-%dT%H:%M:%SZ")'
 jq '.arr1 |= del(.[] | select(. == "foo"))'
 ```
 
-* Remove all items matchin a regex
+* Remove all items matching a regex
 
 ```bash
 jq '.arr1 |= del(.[] | select(.|test("oo")))'
@@ -90,12 +90,20 @@ To turn this into a table:
 
 ```bash
 jq -r '.[] | [ .updatedTimestamp, .id, .name ] | @tsv'
+
+1571343024191  a-123-888888  EntryA
+1706767373652  b-234         EntryB
+1683190330454  c-456         EntryC
 ``` 
 
 To also display the time in a more readable ISO format:
 
 ```bash
 jq -r '.[] | [ (.updatedTimestamp | ./1000 | strftime("%Y-%m-%dT%H:%M:%SZ")), .id, .name ] | @tsv'
+
+2019-10-17T20:10:24Z  a-123-888888  EntryA
+2024-02-01T06:02:53Z  b-234         EntryB
+2023-05-04T08:52:10Z  c-456         EntryC
 ```
 
 TIP: To align the spaces for a clearer view, pipe the `jq` output to `column -t`
