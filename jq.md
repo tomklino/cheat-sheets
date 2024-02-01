@@ -3,35 +3,60 @@
 * List paths of all the json file
 
 ```bash
-cat something.json | jq -c 'path(..)|[.[]|tostring]|join("/")'
+jq -r 'path(..)|[.[]|tostring]|join("/")'
 ```
 
 * Filter array based on an argument in the object
 
 ```bash
-cat something.json | jq '.[] | select(.name=="Tom")'
+jq '.[] | select(.name=="Tom")'
 ```
 
 * Filter array based on an argument matching a regex
 
 ```bash
-cat something.json | jq '.[] | select(.city|test("[Rr]amat"))'
+jq '.[] | select(.city|test("[Rr]amat"))'
 ```
 
 * Select an object in which a subarry contains a value
 
 ```bash
-cat something.json | jq 'select(.members[] | contains("username"))'
+jq 'select(.members[] | contains("username"))'
 ```
 
 * Use variables from bash within jq
 
 ```bash
-cat something.json | jq --arg name "$name" '.[] | select(.name==$name)'
+jq --arg name "$name" '.[] | select(.name==$name)'
+```
+## Create a table view from a json input
+
+Consider an input with the following structure:
+
+```json
+[
+  {
+    "id": "a-123-888888",
+    "name": "EntryA",
+    "updatedTimestamp": 1571343024191
+  },
+  {
+    "id": "b-234",
+    "name": "EntryB",
+    "updatedTimestamp": 1706767373652
+  },
+  {
+    "id": "c-456",
+    "name": "EntryC",
+    "updatedTimestamp": 1683190330454
+  }
+]
 ```
 
-* Create a table view from a json input
+To turn this into a table:
 
 ```bash
-jq -r '[["Modified", "ID", "Name"], (.[]|[(.updateTs|tonumber|./1000|strftime("%Y-%m-%dT%H:%M:%SZ")), .id, (.name|@json)])]|.[]|@tsv' | column -t -s $'\t'\n}
+jq -r '.[] | [ .updatedTimestamp, .id, .name ] | @tsv'
 ``` 
+
+TIP: To align the spaces for a clearer view, pipe the `jq` output to `column -t`
