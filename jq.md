@@ -42,6 +42,13 @@ jq '.timestamp | ./1000 | strftime("%Y-%m-%dT%H:%M:%SZ")'
 jq '.timestamp | tonumber | ./1000 | strftime("%Y-%m-%dT%H:%M:%SZ")'
 ```
 
+* Manipulate a string
+
+```bash
+# Remove string "regex" or "Regex"
+jq '.name | sub("[Rr]egex";"")`
+```
+
 ### Edits
 
 * Remove an item from an array
