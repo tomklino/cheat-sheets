@@ -69,6 +69,12 @@ jq '.arr1 |= del(.[] | select(.|test("oo")))'
 jq '.arr1 |= del(.[] | select(.|test("oo"))) | .arr2 |= del(.[]|select(. == "cookie"))'
 ```
 
+* Edit an item if it's key is matching a regex:
+
+```bash
+jq 'to_entries | [ .[] | select(.key|test(".*[Rr]egex.*")).value.cost |= 1000 ] | from_entries'
+```
+
 ### Create a table view from a json input
 
 Consider an input with the following structure:
