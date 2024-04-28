@@ -73,7 +73,15 @@ jq '.arr1 |= del(.[] | select(.|test("oo"))) | .arr2 |= del(.[]|select(. == "coo
 
 ```bash
 jq 'to_entries | [ .[] | select(.key|test(".*[Rr]egex.*")).value.cost |= 1000 ] | from_entries'
+
+# if the json/yaml is an array of single key-value elements:
+jq '[ .[] | to_entries | [ .[] | select(.key|test(".*[Rr]egex.*")).value.cost |= 1000 ] | from_entries ]'
+
+# the |= 1000 can be replaced by other edit commands, for example:
+jq '[ .[] | to_entries | [ .[] | select(.key|test(".*[Rr]egex.*")).value.doc |= sub("^", "hello\n") ] | from_entries ]'
+# will add a line with a "hello" at the beginning of the value `doc`
 ```
+
 
 ### Create a table view from a json input
 
