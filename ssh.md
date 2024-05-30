@@ -21,3 +21,9 @@ Host mymachine
   IdentityFile ~/.ssh/id_rsa
   User root
 ```
+
+* Port forwarding with ssh - bind local port 8000 to port 9000 on the remote machine
+
+```bash
+ssh -L 8000:127.0.0.1:9000 remote.machine.ssh
+```
