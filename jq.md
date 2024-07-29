@@ -3,7 +3,7 @@
 * List paths of all the json file
 
 ```bash
-jq -r 'path(..)|[.[]|tostring]|join("/")'
+jq -r 'path(..)|[.[]|tostring]|join(".")'
 ```
 
 * Filter array based on an argument in the object
